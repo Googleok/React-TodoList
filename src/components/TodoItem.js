@@ -19,8 +19,8 @@ class TodoItem extends Component {
                     onRemove(id)
                 }
                 }>&times;</div>
-                <div style={{color}} className={`todo-text ${checked ? ' checked ' : ''}`}>
-                    <div>{text}</div>
+                <div className={`todo-text ${checked ? ' checked' : ''}`}>
+                    <div style={{color}}>{text}</div>
                 </div>
                 {
                     checked && (<div className={"check-mark"}>✔</div>)

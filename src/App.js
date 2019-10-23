@@ -26,14 +26,15 @@ class App extends Component {
     }
 
     handleCreate = () => {
-        const {input, todos} = this.state;
+        const {input, todos, color} = this.state;
         this.setState({
             input: '', // 인풋 비우고
             // concat 을 사용하여 배열에 추가
             todos: todos.concat({
                 id: this.id++,
                 text: input,
-                checked: false
+                checked: false,
+                color
             })
         });
     }
@@ -103,7 +104,7 @@ class App extends Component {
                     <Palette colors={colors} selected={color} onSelect={handleSelectColor}/>
                 )}
             >
-                <TodoItemList todos={todos} color={color} onToggle={handleToggle} onRemove={handleRemove}/>
+                <TodoItemList todos={todos} onToggle={handleToggle} onRemove={handleRemove}/>
             </TodoListTemplate>
         );
     }
